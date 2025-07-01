@@ -1,0 +1,487 @@
+{
+  "317": {
+    "inputs": {
+      "MODEL": [
+        "343",
+        0
+      ],
+      "CLIP": [
+        "343",
+        1
+      ],
+      "VAE": [
+        "318",
+        0
+      ]
+    },
+    "class_type": "Anything Everywhere3",
+    "_meta": {
+      "title": "Anything Everywhere3"
+    }
+  },
+  "318": {
+    "inputs": {
+      "vae_name": "ae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "320": {
+    "inputs": {
+      "guidance": 3.5,
+      "conditioning": [
+        "336",
+        0
+      ]
+    },
+    "class_type": "FluxGuidance",
+    "_meta": {
+      "title": "FluxGuidance"
+    }
+  },
+  "321": {
+    "inputs": {
+      "style_model_name": "flux1-redux-dev.safetensors"
+    },
+    "class_type": "StyleModelLoader",
+    "_meta": {
+      "title": "Load Style Model"
+    }
+  },
+  "322": {
+    "inputs": {
+      "clip_name": "siglip-so400m-patch14-384.safetensors"
+    },
+    "class_type": "CLIPVisionLoader",
+    "_meta": {
+      "title": "Load CLIP Vision"
+    }
+  },
+  "323": {
+    "inputs": {
+      "anything": [
+        "321",
+        0
+      ],
+      "anything2": [
+        "322",
+        0
+      ],
+      "anything3": [
+        "320",
+        0
+      ]
+    },
+    "class_type": "Anything Everywhere3",
+    "_meta": {
+      "title": "Anything Everywhere3"
+    }
+  },
+  "324": {
+    "inputs": {
+      "conditioning": [
+        "320",
+        0
+      ]
+    },
+    "class_type": "ConditioningZeroOut",
+    "_meta": {
+      "title": "ConditioningZeroOut"
+    }
+  },
+  "336": {
+    "inputs": {
+      "text": [
+        "349",
+        0
+      ],
+      "clip": [
+        "343",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "Positive"
+    }
+  },
+  "340": {
+    "inputs": {
+      "makeup_style": "-",
+      "makeup_color": "-",
+      "eyeshadow": false,
+      "eyeliner": false,
+      "mascara": false,
+      "blush": false,
+      "lipstick": false,
+      "lip_gloss": false,
+      "active": true,
+      "seed": 0
+    },
+    "class_type": "PortraitMasterMakeup",
+    "_meta": {
+      "title": "Portrait Master: Make-up"
+    }
+  },
+  "342": {
+    "inputs": {
+      "natural_skin": 0,
+      "bare_face": 0,
+      "washed_face": 0,
+      "dried_face": 0,
+      "skin_details": 0,
+      "skin_pores": 0,
+      "dimples": 0,
+      "wrinkles": 0,
+      "freckles": 0,
+      "moles": 0,
+      "skin_imperfections": 0,
+      "skin_acne": 0,
+      "tanned_skin": 0,
+      "eyes_details": 2,
+      "iris_details": 2,
+      "circular_iris": 2,
+      "circular_pupil": 2,
+      "active": true,
+      "seed": 135,
+      "text_in": [
+        "346",
+        0
+      ]
+    },
+    "class_type": "PortraitMasterSkinDetails",
+    "_meta": {
+      "title": "Portrait Master: Skin Details"
+    }
+  },
+  "343": {
+    "inputs": {
+      "PowerLoraLoaderHeaderWidget": {
+        "type": "PowerLoraLoaderHeaderWidget"
+      },
+      "lora_1": {
+        "on": false,
+        "lora": "Client\\M&R\\melissa-body.safetensors",
+        "strength": 0.85
+      },
+      "lora_2": {
+        "on": false,
+        "lora": "NSFW\\nipplediffusion-f1.safetensors",
+        "strength": 1
+      },
+      "lora_3": {
+        "on": false,
+        "lora": "NSFW\\pussy flux lora.safetensors",
+        "strength": 0.4
+      },
+      "➕ Add Lora": "",
+      "model": [
+        "348",
+        0
+      ],
+      "clip": [
+        "347",
+        0
+      ]
+    },
+    "class_type": "Power Lora Loader (rgthree)",
+    "_meta": {
+      "title": "Power Lora Loader (rgthree)"
+    }
+  },
+  "344": {
+    "inputs": {
+      "model_pose": "Kneeling Pose",
+      "clothes": "-",
+      "female_lingerie": "random 🎲",
+      "makeup": "Glam Makeup",
+      "light_type": "random 🎲",
+      "light_direction": "-",
+      "light_weight": 1,
+      "style_1": "-",
+      "style_1_weight": 1,
+      "style_2": "-",
+      "style_2_weight": 1,
+      "photorealism_improvement": true,
+      "active": true,
+      "seed": 1310,
+      "text_in": [
+        "342",
+        0
+      ]
+    },
+    "class_type": "PortraitMasterStylePose",
+    "_meta": {
+      "title": "Portrait Master: Style & Pose"
+    }
+  },
+  "346": {
+    "inputs": {
+      "shot": "random 🎲",
+      "shot_weight": 1,
+      "gender": "Woman",
+      "androgynous": 0,
+      "ugly": 0,
+      "ordinary_face": 0,
+      "age": "20",
+      "nationality_1": "-",
+      "nationality_2": "-",
+      "nationality_mix": 0.5,
+      "body_type": "-",
+      "body_type_weight": 1,
+      "eyes_color": "-",
+      "eyes_shape": "-",
+      "lips_color": "-",
+      "lips_shape": "-",
+      "facial_expression": "-",
+      "facial_expression_weight": 1,
+      "face_shape": "-",
+      "face_shape_weight": 1,
+      "facial_asymmetry": 0,
+      "hair_style": "-",
+      "hair_color": "-",
+      "hair_length": "-",
+      "disheveled": 0,
+      "beard": "-",
+      "beard_color": "-",
+      "active": true,
+      "seed": 1835
+    },
+    "class_type": "PortraitMasterBaseCharacter",
+    "_meta": {
+      "title": "Portrait Master: Base Character"
+    }
+  },
+  "347": {
+    "inputs": {
+      "clip_name1": "clip_l.safetensors",
+      "clip_name2": "t5\\t5xxl_fp16.safetensors",
+      "type": "flux",
+      "device": "default"
+    },
+    "class_type": "DualCLIPLoader",
+    "_meta": {
+      "title": "DualCLIPLoader"
+    }
+  },
+  "348": {
+    "inputs": {
+      "unet_name": "flux1-dev.safetensors",
+      "weight_dtype": "fp8_e4m3fn"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "Load Diffusion Model"
+    }
+  },
+  "349": {
+    "inputs": {
+      "string1": [
+        "340",
+        0
+      ],
+      "string2": [
+        "370",
+        0
+      ],
+      "string3": "",
+      "string4": [
+        "396",
+        0
+      ]
+    },
+    "class_type": "FlexibleStringMergerNode",
+    "_meta": {
+      "title": "APNext Flexible String Merger"
+    }
+  },
+  "352": {
+    "inputs": {
+      "scheduler": "sgm_uniform",
+      "steps": 24,
+      "denoise": 1
+    },
+    "class_type": "BasicScheduler",
+    "_meta": {
+      "title": "BasicScheduler"
+    }
+  },
+  "353": {
+    "inputs": {
+      "sampler_name": "dpmpp_2m"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "KSamplerSelect"
+    }
+  },
+  "354": {
+    "inputs": {
+      "dishonesty_factor": -0.1,
+      "start_percent": 0.1,
+      "end_percent": 0.9,
+      "smooth_factor": 0.5,
+      "sampler": [
+        "353",
+        0
+      ]
+    },
+    "class_type": "AdvancedLyingSigmaSampler",
+    "_meta": {
+      "title": "Advanced Lying Sigma Sampler"
+    }
+  },
+  "355": {
+    "inputs": {},
+    "class_type": "ConditioningZeroOut",
+    "_meta": {
+      "title": "ConditioningZeroOut"
+    }
+  },
+  "360": {
+    "inputs": {
+      "samples": [
+        "368",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "361": {
+    "inputs": {
+      "seed": 946954078607749
+    },
+    "class_type": "Seed_",
+    "_meta": {
+      "title": "CreateSeedNode ♾️Mixlab"
+    }
+  },
+  "364": {
+    "inputs": {
+      "anything": [
+        "366",
+        5
+      ]
+    },
+    "class_type": "Anything Everywhere",
+    "_meta": {
+      "title": "Anything Everywhere"
+    }
+  },
+  "365": {
+    "inputs": {
+      "title_regex": "seed",
+      "input_regex": ".*",
+      "group_regex": ".*",
+      "anything": [
+        "361",
+        0
+      ]
+    },
+    "class_type": "Anything Everywhere?",
+    "_meta": {
+      "title": "Anything Everywhere?"
+    }
+  },
+  "366": {
+    "inputs": {
+      "width": 1080,
+      "height": 1920,
+      "aspect_ratio": "custom",
+      "swap_dimensions": "Off",
+      "upscale_factor": 1,
+      "prescale_factor": 1,
+      "batch_size": 1
+    },
+    "class_type": "CR Aspect Ratio",
+    "_meta": {
+      "title": "🔳 CR Aspect Ratio"
+    }
+  },
+  "368": {
+    "inputs": {
+      "seed": 1023340066477476,
+      "steps": 30,
+      "cfg": 1,
+      "sampler_name": "dpmpp_2m",
+      "scheduler": "sgm_uniform",
+      "denoise": 1,
+      "negative": [
+        "324",
+        0
+      ],
+      "latent_image": [
+        "366",
+        5
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "370": {
+    "inputs": {
+      "prompt": "",
+      "separator": ",",
+      "seed": 691952577247887,
+      "attributes": false,
+      "portrait_poses": "None",
+      "poses": "None",
+      "string": [
+        "344",
+        0
+      ]
+    },
+    "class_type": "PosesPromptNode",
+    "_meta": {
+      "title": "APNext Poses"
+    }
+  },
+  "372": {
+    "inputs": {
+      "images": [
+        "360",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "396": {
+    "inputs": {
+      "seed": 103050568701459,
+      "custom": "",
+      "subject": "",
+      "artform": "photography",
+      "photo_type": "random",
+      "body_types": "random",
+      "default_tags": "random",
+      "roles": "random",
+      "hairstyles": "random",
+      "additional_details": "random",
+      "photography_styles": "random",
+      "device": "random",
+      "photographer": "random",
+      "artist": "random",
+      "digital_artform": "random",
+      "place": "disabled",
+      "lighting": "random",
+      "clothing": "random",
+      "composition": "random",
+      "pose": "random",
+      "background": "random"
+    },
+    "class_type": "PromptGenerator",
+    "_meta": {
+      "title": "Auto Prompter"
+    }
+  }
+}
