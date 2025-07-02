@@ -1,0 +1,68 @@
+{
+  "prompt": [
+    {
+      "name": "load_model",
+      "type": "CheckpointLoaderSimple",
+      "inputs": {
+        "ckpt_name": "juggernautXL_v8.safetensors"
+      }
+    },
+    {
+      "name": "positive_prompt",
+      "type": "CLIPTextEncode",
+      "inputs": {
+        "text": "cinematic portrait of a woman, ultra realistic, 35mm, soft light, trending on artstation"
+      }
+    },
+    {
+      "name": "negative_prompt",
+      "type": "CLIPTextEncode",
+      "inputs": {
+        "text": "blurry, distorted, bad anatomy, ugly"
+      }
+    },
+    {
+      "name": "empty_latent",
+      "type": "EmptyLatentImage",
+      "inputs": {
+        "width": 512,
+        "height": 512,
+        "batch_size": 1
+      }
+    },
+    {
+      "name": "k_sampler",
+      "type": "KSampler",
+      "inputs": {
+        "model": ["load_model", "CKPT"],
+        "positive": ["positive_prompt", "CLIP"],
+        "negative": ["negative_prompt", "CLIP"],
+        "latent_image": ["empty_latent", "LATENT"],
+        "steps": 20,
+        "cfg": 7,
+        "sampler_name": "euler",
+        "scheduler": "normal",
+        "seed": 123456
+      }
+    },
+    {
+      "name": "ultimate_upscale",
+      "type": "UltimateSDUpscale",
+      "inputs": {
+        "image": ["k_sampler", "IMAGE"],
+        "tile_width": 512,
+        "tile_height": 512,
+        "scale_factor": 2,
+        "overlap": 32
+      }
+    },
+    {
+      "name": "save_image",
+      "type": "SaveImage",
+      "inputs": {
+        "filename_prefix": "upscaled_result",
+        "images": ["ultimate_upscale", "IMAGE"]
+      }
+    }
+  ]
+}
