@@ -10,7 +10,7 @@ RUN git clone https://github.com/ssitu/ComfyUI_UltimateSDUpscale.git /workspace/
 
 RUN mkdir -p /workspace/ComfyUI/models/checkpoints && \
     wget -O /workspace/ComfyUI/models/checkpoints/juggernautXL_v8.safetensors \
-    https://huggingface.co/RunDiffusion/Juggernaut-XL-v8/resolve/main/juggernautXL_v8.safetensors
+    https://huggingface.co/RunDiffusion/Juggernaut-XL-v8/resolve/9022a900377ce2d3303d3e6d86b09f6874e1e2a7/juggernautXL_v8Rundiffusion.safetensors
 
 COPY handler.py /workspace/handler.py
 COPY workflow_api.json /workspace/workflow_api.json
